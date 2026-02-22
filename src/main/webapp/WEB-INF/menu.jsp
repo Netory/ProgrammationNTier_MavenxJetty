@@ -1,3 +1,4 @@
+<jsp:useBean id="utilisateur" scope="session" type="modele.Utilisateur"/>
 <%--
   Created by IntelliJ IDEA.
   User: o22205297@campus.univ-orleans.fr
@@ -11,9 +12,14 @@
     <title>menu</title>
 </head>
 <body>
-<h1>C'est bien le menu là</h1>
+<h1>Bonjour ${utilisateur.login}</h1>
 <ul>
-    <l1><a href="/authentification/deconnexion">Déconnexion</a></l1>
+    <form method="get" action="${pageContext.request.contextPath}/pel/listesParis">
+        <button type="submit" name="lp">Les paris</button></form>
+    <form method="get" action="${pageContext.request.contextPath}/pel/mesparis">
+        <button type="submit" name="lp">Mes paris</button></form>
+    <form method="get" action="${pageContext.request.contextPath}/pel/deconnexion">
+        <button type="submit" name="lp">Déconnexion</button></form>
 </ul>
 </body>
 </html>
